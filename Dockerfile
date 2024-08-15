@@ -44,6 +44,7 @@ RUN pip install -r requirements.txt
 
 RUN git clone -b energy_star_dev https://github.com/huggingface/optimum-benchmark.git /optimum-benchmark && cd optimum-benchmark && pip install -e .
 
+COPY ./check_h100.py /check_h100.py
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
