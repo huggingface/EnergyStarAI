@@ -9,5 +9,7 @@ if __name__=="__main__":
         gpu_name = gpu_name[0]
 
     # Raise an error if the device is not H100
-    if "NVIDIA H100" not in gpu_name:
+    if "NVIDIA H100" in gpu_name:
+        print("At least one NVIDIA H100 GPU has been detected, launching the benchmark...")
+    else:
         raise RuntimeError(f"This Docker container should be executed on NVIDIA H100 GPUs only, detected {gpu_name}.")
