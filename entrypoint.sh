@@ -11,7 +11,8 @@ fi
 RESULTS_DIR="/results"
 BENCHMARK_BACKEND="${BENCHMARK_BACKEND:-pytorch}"  # Default to pytorch (ai_energy_benchmarks)
 
-python /check_h100.py
+python /launch_backend.py
+# python /check_h100.py
 if [[ $? = 0 ]]; then
     mkdir -p "${RESULTS_DIR}"
 
